@@ -6,7 +6,6 @@
 		<answers>
 			<answer id="0" text="Пойду поем"></answer>
 			<answer id="1" text="Поголодаю"></answer>
-			<answer id="2" text="Враньё. Не хочу есть"></answer>
 		</answers>
 	</node>
 	<node text="Привет, новичок">

@@ -6,13 +6,19 @@ namespace Game.Dialogue
 {
     public class DialogueController : MonoBehaviour
     {
+
+        private UIManager _uiManager;
+        
         public void Initialize(){
+            _uiManager = UIManager.Instance();
+            _uiManager.OnAnswerButtonClicked += OnAnswerButtonClicked;
+            
             var dialogueNode = DialogueManager.Instance().StartDialogue();
             UpdateView(dialogueNode);
         }
         
         private void Update(){
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(KeyCode.Space) && !_uiManager.IsAnswerPanelOpened()){
                 ChangePhrase();
             }
         }
@@ -24,22 +30,41 @@ namespace Game.Dialogue
         }
 
         private void UpdateView(DialogueNode dialogueNode){
-            var uiManager = UIManager.Instance();
             
-            uiManager.SetTextPanel(dialogueNode.GetDialogueText());
+            UpdateTextPanel(dialogueNode);
+            UpdateAnswerPanel(dialogueNode);
 
             var newBackground = dialogueNode.GetNewBackground();
             if (!string.IsNullOrEmpty(newBackground)){
-                uiManager.SetBackground(newBackground);
+                _uiManager.SetBackground(newBackground);
             }
+        }
 
+        private void UpdateTextPanel(DialogueNode dialogueNode){
+            _uiManager.SetTextPanel(dialogueNode.GetDialogueText());
+            
             var isHideTextPanel = dialogueNode.IsHideText();
             if (isHideTextPanel){
-                uiManager.HideTextPanel();
+                _uiManager.HideTextPanel();
             }
             else{
-                uiManager.ShowTextPanel();
+                _uiManager.ShowTextPanel();
             }
+
+        }
+
+        private void UpdateAnswerPanel(DialogueNode dialogueNode){
+            if (dialogueNode.IsHasAnswers()){
+                _uiManager.ShowAnswerPanel(dialogueNode);
+            }
+            else{
+                _uiManager.HideAnswerPanel();
+            }
+        }
+
+        private void OnAnswerButtonClicked(int answerId){
+            //TODO: use answerId as intended
+            ChangePhrase();
         }
     }
 }
