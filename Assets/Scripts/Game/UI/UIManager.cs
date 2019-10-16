@@ -14,6 +14,11 @@ namespace Game.UI
         public void SetTextPanel(string text){
             _canvas.TextPanel.SetText(text);
         }
+
+        public void SetBackground(string backgroundName){
+            var background = DataManager.GetSpriteBackground(backgroundName);
+            _canvas.Background.sprite = background;
+        }
         
         public static UIManager Instance(){
             if (_manager == null){

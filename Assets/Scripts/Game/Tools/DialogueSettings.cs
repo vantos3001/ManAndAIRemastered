@@ -22,6 +22,7 @@ namespace Game.Tools
     public class Node
     {
         [XmlAttribute("text")] public string text;
+        [XmlAttribute("new_background")] public string newBackground;
 
         [XmlArray("answers")] 
         [XmlArrayItem("answer")]

@@ -14,19 +14,22 @@ namespace Game.Dialogue
             _dialogueSystem = new DialogueSystem();
         }
         
-        public void StartDialogue(){
+        public DialogueNode StartDialogue(){
             _dialogueSystem.StartDialogue();
 
             NotifyDialoguePhraseChanged();
+            
+            var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
+            return currentDialogueNode;
         }
 
-        public string NextDialoguePhrase(){
+        public DialogueNode NextDialoguePhrase(){
             _dialogueSystem.Next();
             
             NotifyDialoguePhraseChanged();
             
             var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
-            return currentDialogueNode.GetDialogueText();
+            return currentDialogueNode;
         }
 
         private void NotifyDialoguePhraseChanged(){

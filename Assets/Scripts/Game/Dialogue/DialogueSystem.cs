@@ -5,7 +5,8 @@ namespace Game.Dialogue
 {
     public class DialogueSystem
     {
-        private const string TEXT_ASSET_PATH = "Texts/basic_phrases";
+        private const string TEST_ASSET_PATH = "Texts/test_phrases";
+        private const string MAIN_TEXT_ASSET_PATH = "Texts/main";
         
         private TextAsset _asset;
 
@@ -17,7 +18,7 @@ namespace Game.Dialogue
         private DialogueSettings _dialogueSettings;
 
         public void Load(){
-            _asset = Resources.Load<TextAsset>(TEXT_ASSET_PATH);
+            _asset = Resources.Load<TextAsset>(TEST_ASSET_PATH);
             _dialogueSettings = DialogueSettings.Load(_asset);
         }
 
@@ -69,6 +70,10 @@ namespace Game.Dialogue
 
         public string GetAnswerTextById(int answerId){
             return _node.answers[answerId].text;
+        }
+
+        public string GetNewBackground(){
+            return _node.newBackground;
         }
     }
 }
