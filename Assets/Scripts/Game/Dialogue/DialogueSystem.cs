@@ -1,3 +1,4 @@
+using System;
 using Game.Tools;
 using UnityEngine;
 
@@ -42,6 +43,35 @@ namespace Game.Dialogue
             _currentDialogueNode = new DialogueNode(currentNode);
         }
 
+        public void NextByAnswerId(int answerId){
+            var nodeName = _currentDialogueNode.GetNextNodeNameByAnswerId(answerId);
+            _currentPhrase = FindNodeIndexByName(nodeName);
+            
+            var nodeLength = DialogueTextLength();
+            
+            if ( nodeLength <= _currentPhrase){
+                _currentPhrase = nodeLength - 1;
+                Debug.LogWarning("Dialogue text ended");
+            }
+
+            var currentNode = _dialogueSettings.Nodes[_currentPhrase];
+            _currentDialogueNode = new DialogueNode(currentNode);
+        }
+
+        private int FindNodeIndexByName(string name){
+            var nodeLength = DialogueTextLength();
+            for (int nodeIndex = 0; nodeIndex < nodeLength; nodeIndex++){
+                var node = _dialogueSettings.Nodes[nodeIndex];
+                if (node.name == name){
+                    return nodeIndex;
+                }
+            }
+            
+            Debug.LogError("Node with name = " + name + " is not found");
+            
+            return Int32.MaxValue;
+        }
+        
         private int DialogueTextLength(){
             return _dialogueSettings.Nodes.Length;
         }
@@ -70,6 +100,15 @@ namespace Game.Dialogue
 
         public string GetAnswerTextById(int answerId){
             return _node.answers[answerId].text;
+        }
+
+        public string GetNextNodeNameByAnswerId(int answerId){
+            var nodeName = _node.answers[answerId].toNode;
+            if (string.IsNullOrEmpty(nodeName)){
+                Debug.LogError($"node name for answer = {GetAnswerTextById(answerId)} is empty");
+            }
+
+            return nodeName;
         }
 
         public string GetNewBackground(){

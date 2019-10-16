@@ -21,6 +21,7 @@ namespace Game.Tools
     [Serializable]
     public class Node
     {
+        [XmlAttribute("name")] public string name;
         [XmlAttribute("text")] public string text;
         [XmlAttribute("new_background")] public string newBackground;
         [XmlAttribute("hide_text")] public string hideText;
@@ -36,6 +37,8 @@ namespace Game.Tools
         [XmlAttribute("id")] public int id;
 
         [XmlAttribute("text")] public string text;
+
+        [XmlAttribute("to_node")] public string toNode;
     }
 }
 

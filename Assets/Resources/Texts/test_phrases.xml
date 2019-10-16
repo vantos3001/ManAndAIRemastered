@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dialogue>
-	<node new_background="prologue" hide_text="true">
+	<node  name = "prologue_0" new_background="prologue" hide_text="true">
 	</node>
-	<node text="Хочу есть" new_background="conference">
+	<node name = "start_0" text="Хочу есть" new_background="conference">
 		<answers>
-			<answer id="0" text="Пойду поем"></answer>
-			<answer id="1" text="Поголодаю"></answer>
+			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
+			<answer id="1" text="Поголодаю" to_node="start_2"></answer>
 		</answers>
 	</node>
-	<node text="Привет, новичок">
+	<node name = "start_1" text="Привет, новичок">
 	</node>
-	<node text="Есть небольшие переживания по поводу аниме">
+	<node name = "start_2" text="Есть небольшие переживания по поводу аниме">
 	</node>
 </dialogue>

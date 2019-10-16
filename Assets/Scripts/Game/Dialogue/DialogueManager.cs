@@ -8,7 +8,6 @@ namespace Game.Dialogue
         private DialogueSystem _dialogueSystem;
         
         public Action<DialogueNode> DialoguePhraseChanged;
-
         
         private DialogueManager(){
             _dialogueSystem = new DialogueSystem();
@@ -18,6 +17,13 @@ namespace Game.Dialogue
             _dialogueSystem.StartDialogue();
 
             NotifyDialoguePhraseChanged();
+            
+            var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
+            return currentDialogueNode;
+        }
+
+        public DialogueNode NextDialoguePhraseByAnswerId(int answerId){
+            _dialogueSystem.NextByAnswerId(answerId);
             
             var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
             return currentDialogueNode;

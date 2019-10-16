@@ -29,6 +29,13 @@ namespace Game.Dialogue
 
         }
 
+        private void ChangePhraseByAnswer(int answerId){
+            var dialogueNode = DialogueManager.Instance().NextDialoguePhraseByAnswerId(answerId);
+            UpdateView(dialogueNode);
+
+        }
+        
+
         private void UpdateView(DialogueNode dialogueNode){
             
             UpdateTextPanel(dialogueNode);
@@ -63,8 +70,7 @@ namespace Game.Dialogue
         }
 
         private void OnAnswerButtonClicked(int answerId){
-            //TODO: use answerId as intended
-            ChangePhrase();
+            ChangePhraseByAnswer(answerId);
         }
     }
 }
