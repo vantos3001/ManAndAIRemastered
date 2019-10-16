@@ -1,0 +1,64 @@
+# Mercurial Addons
+.hg
+.hgignore
+.hgsub
+.hgcache
+
+# Cache Files
+*.cache
+
+# Syncthing Content Sources
+content-src
+
+# Unity
+Library/*
+#TOO HEAVY
+#!Library/ShaderCache
+#!Library/ShaderCache/*
+#!Library/AtlasCache
+#!Library/AtlasCache/*
+/Temp
+
+# Visual Studio
+.vs
+
+# C# Projects
+*.sln
+*.csproj
+
+!ManAndAI Remastered.sln
+!ManAndAI Remastered.csproj
+
+# MonoDevelop
+*.userprefs
+
+# VS Code
+.vscode/*
+
+# JetBrains Rider
+.idea/*
+
+# Building
+.gradle/*
+obj/*
+# Unknown
+.fuse_hidden*
+documentation/html
+*.tmp
+documentation/latex
+branding/
+*.DS_Store
+
+# Syncthing System
+.stfolder
+.stversions
+
+# Syncthing Content
+#Assets/Content/*
+#!Assets/Content/.stignore
+#!Assets/Content/.sync-content-filter.txt
+
+# Content Sources
+content/*
+# Builds
+builds/*
