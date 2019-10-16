@@ -1,3 +1,4 @@
+using System;
 using Game.UI;
 using UnityEngine;
 
@@ -23,11 +24,21 @@ namespace Game.Dialogue
         }
 
         private void UpdateView(DialogueNode dialogueNode){
-            UIManager.Instance().SetTextPanel(dialogueNode.GetDialogueText());
+            var uiManager = UIManager.Instance();
+            
+            uiManager.SetTextPanel(dialogueNode.GetDialogueText());
 
             var newBackground = dialogueNode.GetNewBackground();
             if (!string.IsNullOrEmpty(newBackground)){
-                UIManager.Instance().SetBackground(newBackground);
+                uiManager.SetBackground(newBackground);
+            }
+
+            var isHideTextPanel = dialogueNode.IsHideText();
+            if (isHideTextPanel){
+                uiManager.HideTextPanel();
+            }
+            else{
+                uiManager.ShowTextPanel();
             }
         }
     }

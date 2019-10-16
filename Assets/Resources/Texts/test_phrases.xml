@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dialogue>
-	<node text="Начинаем наш поход" new_background="prologue">
-	</node>
-	<node text="Привет, новичок">
+	<node new_background="prologue" hide_text="true">
 	</node>
 	<node text="Хочу есть" new_background="conference">
 		<answers>
@@ -10,6 +8,8 @@
 			<answer id="1" text="Поголодаю"></answer>
 			<answer id="2" text="Враньё. Не хочу есть"></answer>
 		</answers>
+	</node>
+	<node text="Привет, новичок">
 	</node>
 	<node text="Есть небольшие переживания по поводу аниме">
 	</node>

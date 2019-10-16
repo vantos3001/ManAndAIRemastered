@@ -75,5 +75,11 @@ namespace Game.Dialogue
         public string GetNewBackground(){
             return _node.newBackground;
         }
+
+        public bool IsHideText(){
+            var isHide = _node.hideText == "true";
+
+            return isHide;
+        }
     }
 }

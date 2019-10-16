@@ -23,6 +23,7 @@ namespace Game.Tools
     {
         [XmlAttribute("text")] public string text;
         [XmlAttribute("new_background")] public string newBackground;
+        [XmlAttribute("hide_text")] public string hideText;
 
         [XmlArray("answers")] 
         [XmlArrayItem("answer")]

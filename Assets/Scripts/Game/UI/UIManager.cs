@@ -19,6 +19,17 @@ namespace Game.UI
             var background = DataManager.GetSpriteBackground(backgroundName);
             _canvas.Background.sprite = background;
         }
+
+        public void HideTextPanel(){
+            _canvas.TextPanel.gameObject.SetActive(false);
+        }
+
+        public void ShowTextPanel(){
+            var textPanelGO = _canvas.TextPanel.gameObject;
+            if (!textPanelGO.activeSelf){
+                _canvas.TextPanel.gameObject.SetActive(true);
+            }
+        }
         
         public static UIManager Instance(){
             if (_manager == null){
