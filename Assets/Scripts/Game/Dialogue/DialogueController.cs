@@ -18,8 +18,13 @@ namespace Game.Dialogue
         }
         
         private void Update(){
-            if (Input.GetKeyDown(KeyCode.Space) && !_uiManager.IsAnswerPanelOpened()){
-                ChangePhrase();
+            if (Input.GetKeyDown(KeyCode.Space)){
+                if (!_uiManager.IsAnswerPanelOpened()){
+                    ChangePhrase();
+                }
+                else{
+                    SkipPhrase();
+                }
             }
         }
 
@@ -27,6 +32,14 @@ namespace Game.Dialogue
             var dialogueNode = DialogueManager.Instance().NextDialoguePhrase();
             UpdateView(dialogueNode);
 
+        }
+
+        private void SkipPhrase(){
+            var textPanel = _uiManager.TextPanel;
+
+            if (textPanel.IsEffectPlayed){
+                textPanel.SkipEffect();
+            }
         }
 
         private void ChangePhraseByAnswer(int answerId){
@@ -47,15 +60,22 @@ namespace Game.Dialogue
             }
         }
 
-        private void UpdateTextPanel(DialogueNode dialogueNode){
-            _uiManager.SetTextPanel(dialogueNode.GetDialogueText());
-            
+        private void UpdateTextPanel(DialogueNode dialogueNode){           
             var isHideTextPanel = dialogueNode.IsHideText();
             if (isHideTextPanel){
                 _uiManager.HideTextPanel();
             }
             else{
                 _uiManager.ShowTextPanel();
+                
+                var textPanel = _uiManager.TextPanel;
+
+                if (textPanel.IsEffectPlayed){
+                    textPanel.SkipEffect();
+                }
+                else{
+                    textPanel.SetText(dialogueNode.GetDialogueText());
+                }
             }
 
         }

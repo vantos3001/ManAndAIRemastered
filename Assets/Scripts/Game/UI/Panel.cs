@@ -11,7 +11,7 @@ namespace Game.UI
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Image _background;
 
-        public void SetText(string text){
+        public virtual void SetText(string text){
             _text.text = text;
         }
     }

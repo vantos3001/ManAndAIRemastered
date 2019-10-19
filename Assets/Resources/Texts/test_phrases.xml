@@ -2,7 +2,7 @@
 <dialogue>
 	<node  name = "prologue_0" new_background="prologue" hide_text="true">
 	</node>
-	<node name = "start_0" text="Хочу есть" new_background="conference">
+	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
 		<answers>
 			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
 			<answer id="1" text="Поголодаю" to_node="start_2"></answer>

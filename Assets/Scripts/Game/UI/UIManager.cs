@@ -17,9 +17,7 @@ namespace Game.UI
             _canvas.AnswerPanel.AnswerButtonClicked += NotifyAnswerButtonClicked;
         }
 
-        public void SetTextPanel(string text){
-            _canvas.TextPanel.SetText(text);
-        }
+        public TypeWriterPanel TextPanel => _canvas.TextPanel;
 
         public void SetBackground(string backgroundName){
             var background = DataManager.GetSpriteBackground(backgroundName);
