@@ -2,6 +2,12 @@
 <dialogue>
 	<node  name = "prologue_0" new_background="prologue" hide_text="true">
 	</node>
+	<node  name = "prologue_2" text="prologue_2 есть, очень оооочень хочу" new_background="conference" hide_text="false">
+	</node>
+	<node  name = "prologue_3" text="prologue_3 есть, очень оооочень хочу" new_background="conference" hide_text="false">
+	</node>
+	<node  name = "prologue_4" text="prologue_4 есть, очень оооочень хочу" new_background="conference" hide_text="false">
+	</node>
 	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
 		<answers>
 			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
@@ -10,6 +16,12 @@
 	</node>
 	<node name = "start_1" text="Привет, новичок">
 	</node>
-	<node name = "start_2" text="Есть небольшие переживания по поводу аниме">
+	<node name = "start_2" text="0Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_3" text="1Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_4" text="2Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_5" text="3Есть небольшие переживания по поводу аниме">
 	</node>
 </dialogue>

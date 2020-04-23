@@ -12,42 +12,37 @@ namespace Game.Dialogue
         public void Initialize(){
             _uiManager = UIManager.Instance();
             _uiManager.OnAnswerButtonClicked += OnAnswerButtonClicked;
+
+            EventManager.DialoguePhraseChanged += UpdateView;
             
-            var dialogueNode = DialogueManager.Instance().StartDialogue();
-            UpdateView(dialogueNode);
+            DialogueManager.Instance().StartDialogue();
         }
-        
-        private void Update(){
-            if (Input.GetKeyDown(KeyCode.Space)){
-                if (!_uiManager.IsAnswerPanelOpened()){
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                HandleMouseLeftClick();
+            }
+        }
+
+        private void HandleMouseLeftClick()
+        {
+            if(!_uiManager.IsAnswerPanelOpened())
+                if (_uiManager.TextPanel.IsWaitForClick || _uiManager.IsHideTextPanel())
+                {
                     ChangePhrase();
                 }
-                else{
-                    SkipPhrase();
-                }
-            }
         }
-
+        
         private void ChangePhrase(){
-            var dialogueNode = DialogueManager.Instance().NextDialoguePhrase();
-            UpdateView(dialogueNode);
-
-        }
-
-        private void SkipPhrase(){
-            var textPanel = _uiManager.TextPanel;
-
-            if (textPanel.IsEffectPlayed){
-                textPanel.SkipEffect();
-            }
+            DialogueManager.Instance().NextDialoguePhrase();
         }
 
         private void ChangePhraseByAnswer(int answerId){
             var dialogueNode = DialogueManager.Instance().NextDialoguePhraseByAnswerId(answerId);
             UpdateView(dialogueNode);
-
         }
-        
 
         private void UpdateView(DialogueNode dialogueNode){
             
@@ -70,10 +65,7 @@ namespace Game.Dialogue
                 
                 var textPanel = _uiManager.TextPanel;
 
-                if (textPanel.IsEffectPlayed){
-                    textPanel.SkipEffect();
-                }
-                else{
+                if (!textPanel.IsEffectPlayed){
                     textPanel.SetText(dialogueNode.GetDialogueText());
                 }
             }

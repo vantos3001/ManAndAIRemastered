@@ -13,8 +13,10 @@ namespace Game.Dialogue
 
         private int _currentPhrase = 0;
         private DialogueNode _currentDialogueNode;
-
         public DialogueNode CurrentDialogueNode => _currentDialogueNode;
+        
+        private bool _isEnded = true;
+        public bool IsEnded => _isEnded;
 
         private DialogueSettings _dialogueSettings;
 
@@ -25,6 +27,7 @@ namespace Game.Dialogue
 
         public void StartDialogue(){
             _currentPhrase = 0;
+            _isEnded = false;
             
             var currentNode = _dialogueSettings.Nodes[_currentPhrase];
             _currentDialogueNode = new DialogueNode(currentNode);
@@ -36,6 +39,7 @@ namespace Game.Dialogue
             
             if ( nodeLength <= _currentPhrase){
                 _currentPhrase = nodeLength - 1;
+                _isEnded = true;
                 Debug.LogWarning("Dialogue text ended");
             }
 

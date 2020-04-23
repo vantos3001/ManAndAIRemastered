@@ -1,3 +1,5 @@
+using System;
+using Game.Dialogue;
 using UnityEngine;
 
 namespace Game.UI
@@ -8,13 +10,32 @@ namespace Game.UI
         [SerializeField] private TypeWriterEffect _typeWriterEffect;
 
         public bool IsEffectPlayed => _typeWriterEffect.IsPlayed;
+        
+        private bool _isWaitForClick;
+        public bool IsWaitForClick => _isWaitForClick;
 
-        public override void SetText(string text){
-            _typeWriterEffect.SetText(text);
+        private void Awake()
+        {
+            _typeWriterEffect.DialoguePhraseEnded += OnDialoguePhraseEnded;
+        }
+        
+        public override void SetText(string text)
+        {
+            Clear();
+            
+            _typeWriterEffect.SetText(text , true);
+        }
+        
+        
+
+        private void Clear()
+        {
+            _isWaitForClick = false;
         }
 
-        public void SkipEffect(){
-            _typeWriterEffect.SkipEffect();
+        private void OnDialoguePhraseEnded()
+        {
+            _isWaitForClick = true;
         }
     }
 }

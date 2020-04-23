@@ -35,6 +35,11 @@ namespace Game.UI
             _canvas.TextPanel.gameObject.SetActive(false);
         }
 
+        public bool IsHideTextPanel()
+        {
+            return !_canvas.TextPanel.isActiveAndEnabled;
+        }
+
         public void ShowAnswerPanel(DialogueNode dialogueNode){
             _canvas.AnswerPanel.gameObject.SetActive(true);
             _canvas.AnswerPanel.UpdateButtons(dialogueNode);

@@ -1,68 +1,107 @@
+using System;
 using TMPro;
 using UnityEngine;
 
-namespace Game
+public class TypeWriterEffect : MonoBehaviour
 {
-    public class TypeWriterEffect : MonoBehaviour
+    [TextArea] private string _text;
+    public float CharacterInterval;
+
+    private string _partialText;
+    private float _cumulativeDeltaTime;
+
+    private TextMeshProUGUI _label;
+
+    private bool _isPlayed;
+    public bool IsPlayed => _isPlayed;
+
+    private bool _skipByMouse;
+
+    private bool _isFirstFramePassed;
+
+    public Action DialoguePhraseEnded;
+
+    private void Awake()
     {
-        [TextArea] private string _text;
-        public float CharacterInterval;
+        _label = GetComponent<TextMeshProUGUI>();
+    }
 
-        private string _partialText;
-        private float _cumulativeDeltaTime;
+    private void Start()
+    {
+        Clear();
+    }
 
-        private TextMeshProUGUI _label;
+    private void Update()
+    {
+        if (_isPlayed)
+        {
+            UpdateEffect();
+        }
+    }
 
-        private bool _isPlayed;
-        public bool IsPlayed => _isPlayed;
+    private void UpdateEffect()
+    {
+        _cumulativeDeltaTime += Time.deltaTime;
 
-        private void Awake(){
-            _label = GetComponent<TextMeshProUGUI>();
+        while (_cumulativeDeltaTime >= CharacterInterval && _partialText.Length != _text.Length)
+        {
+            _partialText += _text[_partialText.Length];
+            _cumulativeDeltaTime -= CharacterInterval;
         }
 
-        private void Start(){
-            Clear();
+        _label.text = _partialText;
+
+        if (_partialText.Length == _text.Length)
+        {
+            StopEffect();
         }
 
-        private void Update(){
-
-            if (_isPlayed){
-                UpdateEffect();
+        if (_skipByMouse)
+        {
+            if (_isFirstFramePassed && Input.GetMouseButtonDown(0))
+            {
+                SkipEffect();
+            }
+            else
+            {
+                _isFirstFramePassed = true;
             }
         }
+    }
 
-        private void UpdateEffect(){
-            _cumulativeDeltaTime += Time.deltaTime;
+    private void Clear()
+    {
+        _partialText = "";
+        _cumulativeDeltaTime = 0;
+        _isFirstFramePassed = false;
+    }
 
-            while (_cumulativeDeltaTime >= CharacterInterval && _partialText.Length != _text.Length){
-                _partialText += _text[_partialText.Length];
-                _cumulativeDeltaTime -= CharacterInterval;
-            }
+    public void SetText(string text, bool skipByMouse = false)
+    {
+        Clear();
+        _text = text;
+        _skipByMouse = skipByMouse;
 
-            _label.text = _partialText;
+        _isPlayed = true;
+    }
 
-            if (_partialText.Length == _text.Length){
-                _isPlayed = false;
-            }
-        }
+    private void StopEffect()
+    {
+        _partialText = _text;
+        _label.text = _partialText;
 
-        private void Clear(){
-            _partialText = "";
-            _cumulativeDeltaTime = 0;
-        }
+        _isPlayed = false;
 
-        public void SetText(string text){
-            Clear();
-            _text = text;
+        HandleOnEffectEnded();
+    }
 
-            _isPlayed = true;
-        }
+    private void HandleOnEffectEnded()
+    {
+        DialoguePhraseEnded?.Invoke();
+    }
 
-        public void SkipEffect(){
-            _partialText = _text;
-            _label.text = _partialText;
-
-            _isPlayed = false;
-        }
+    public void SkipEffect()
+    {
+        StopEffect();
     }
 }

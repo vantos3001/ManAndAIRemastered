@@ -1,4 +1,4 @@
-using System;
+using UnityEngine;
 
 namespace Game.Dialogue
 {
@@ -7,7 +7,6 @@ namespace Game.Dialogue
         private static DialogueManager _manager;
         private DialogueSystem _dialogueSystem;
         
-        public Action<DialogueNode> DialoguePhraseChanged;
         
         private DialogueManager(){
             _dialogueSystem = new DialogueSystem();
@@ -21,7 +20,7 @@ namespace Game.Dialogue
             var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
             return currentDialogueNode;
         }
-
+        
         public DialogueNode NextDialoguePhraseByAnswerId(int answerId){
             _dialogueSystem.NextByAnswerId(answerId);
             
@@ -29,18 +28,27 @@ namespace Game.Dialogue
             return currentDialogueNode;
         }
 
-        public DialogueNode NextDialoguePhrase(){
+        public void NextDialoguePhrase(){
             _dialogueSystem.Next();
-            
-            NotifyDialoguePhraseChanged();
-            
-            var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
-            return currentDialogueNode;
+
+            if (_dialogueSystem.IsEnded)
+            {
+                EndDialogue();
+            }
+            else
+            {
+                NotifyDialoguePhraseChanged();
+            }
+        }
+        
+        private void EndDialogue()
+        {
+            Debug.Log("End dialogue");
         }
 
         private void NotifyDialoguePhraseChanged(){
             var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
-            DialoguePhraseChanged?.Invoke(currentDialogueNode);
+            EventManager.HandleDialoguePhraseChanged(currentDialogueNode);
         }
         
         public void Load(){
