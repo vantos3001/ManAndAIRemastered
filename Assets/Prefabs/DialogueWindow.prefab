@@ -94,11 +94,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnswerPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7569905774414697011, guid: e0c0a9c8ecf32b34ea6e3501d662c74d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7750543394502950916, guid: e0c0a9c8ecf32b34ea6e3501d662c74d,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -349,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 1817550915425712695, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1817550915425712695, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
         type: 3}
