@@ -12,21 +12,16 @@ namespace Game.UI
         [SerializeField] private List<UIAnswerButton> _answerButtons;
 
         public event Action<int> AnswerButtonClicked;
-        
-        void Awake(){
-            
-            for (int i = 0; i < _answerButtons.Count; i++){
-                _answerButtons[i].SetAnswerId(i);
-                _answerButtons[i].OnButtonClicked += NotifyAnswerButtonClicked;
-            }
-        }
 
-        public void UpdateView(DialogueNode dialogueNode){
-            if (dialogueNode.IsHasAnswers()){
-                gameObject.SetActive(true);
-                
+        public void UpdateView(DialogueNode dialogueNode)
+        {
+            IsHasAnswers = dialogueNode.IsHasAnswers();
+            
+            if (IsHasAnswers)
+            {
                 var answerCount = dialogueNode.AnswerCount();
-                for (int i = 0; i < answerCount; i++){
+                for (int i = 0; i < answerCount; i++)
+                {
                     var currentAnswerButton = _answerButtons[i];
                     currentAnswerButton.SetActive(true);
                     currentAnswerButton.SetText(dialogueNode.GetAnswerTextById(i));
@@ -35,20 +30,38 @@ namespace Game.UI
             else
             {
                 gameObject.SetActive(false);
-                
-                foreach (var answerButton in _answerButtons){
+
+                foreach (var answerButton in _answerButtons)
+                {
                     answerButton.SetActive(false);
                 }
             }
         }
 
-        public bool IsOpened(){
-            return gameObject.activeSelf;
+        public bool IsHasAnswers { get; private set; }
+
+        public void Load()
+        {
+            for (int i = 0; i < _answerButtons.Count; i++)
+            {
+                _answerButtons[i].SetAnswerId(i);
+                _answerButtons[i].OnButtonClicked += NotifyAnswerButtonClicked;
+            }
+
+            EventManager.TypeWriterEffectEnded += OnTypeWriterEffectEnded;
         }
 
-        private void NotifyAnswerButtonClicked(int answerId){
+        private void NotifyAnswerButtonClicked(int answerId)
+        {
             AnswerButtonClicked?.Invoke(answerId);
         }
-        
+
+        private void OnTypeWriterEffectEnded()
+        {
+            if (IsHasAnswers)
+            {
+                gameObject.SetActive(true);
+            }
+        }
     }
 }

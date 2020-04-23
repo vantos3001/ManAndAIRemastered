@@ -1,5 +1,6 @@
 using System;
 using Game.Dialogue;
+using Game.UI;
 
 namespace Game
 {
@@ -11,6 +12,7 @@ namespace Game
 
         public void Load(){
             DialogueManager.Instance().Load();
+            UIManager.Instance().Load();
 
             LoadFinished?.Invoke();
         }

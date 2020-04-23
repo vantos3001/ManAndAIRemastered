@@ -23,6 +23,11 @@ namespace Game.UI
             _canvas.Background.sprite = background;
         }
 
+        public void Load()
+        {
+            _canvas.DialogueWindow.Load();
+        }
+
         public static UIManager Instance(){
             if (_manager == null){
                 _manager = new UIManager();

@@ -7,16 +7,18 @@ public class UIDialogueWindow : MonoBehaviour
     public TypeWriterPanel TextPanel;
     public AnswerPanel AnswerPanel;
 
-    private void Awake()
-    {
-        EventManager.DialoguePhraseChanged += UpdateView;
-        
-        AnswerPanel.AnswerButtonClicked += NotifyAnswerButtonClicked;
-    }
-    
     public void SetContent(DialogueNode node)
     {
         UpdateView(node);
+    }
+
+    public void Load()
+    {
+        AnswerPanel.Load();
+        
+        EventManager.DialoguePhraseChanged += UpdateView;
+        
+        AnswerPanel.AnswerButtonClicked += NotifyAnswerButtonClicked;
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class UIDialogueWindow : MonoBehaviour
 
     private void HandleMouseLeftClick()
     {
-        if(!AnswerPanel.IsOpened())
+        if(!AnswerPanel.IsHasAnswers)
             if (TextPanel.IsWaitForClick || IsHideTextPanel())
             {
                 ChangePhrase();
