@@ -36,6 +36,7 @@ namespace Game.UI
         private void OnDialoguePhraseEnded()
         {
             _isWaitForClick = true;
+            EventManager.HandleTypeWriterEffectEnded();
         }
     }
 }

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private DialogueController _dialogueController;
-    public DialogueController DialogueController => _dialogueController;
-
     void Awake()
     {
         LoadManager.Instance().LoadFinished += OnLoadFinished;
@@ -14,6 +11,6 @@ public class GameController : MonoBehaviour
     }
 
     private void OnLoadFinished(){
-        _dialogueController.Initialize();
+        DialogueManager.Instance().StartDialogue();
     }
 }

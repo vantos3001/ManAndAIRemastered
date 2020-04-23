@@ -5,8 +5,8 @@ namespace Game.UI
 {
     public class UICanvas : MonoBehaviour
     {
-        public TypeWriterPanel TextPanel;
-        public AnswerPanel AnswerPanel;
+        
+        public UIDialogueWindow DialogueWindow;
         public Image Background;
     }
 }
