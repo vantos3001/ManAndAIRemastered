@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dialogue>
-	<node text="Начинаем наш поход" new_background="prologue">
+	<node  name = "prologue_0" new_background="prologue" music="when_think_about_life" hide_text="true">
 	</node>
-	<node text="Привет, новичок">
+	<node  name = "begin_0" text="То мгновение... Когда ты либо шёл вперёд, либо стоял на месте иногда возвращаясь назад." new_background="hospital_nuar" hide_text="false">
 	</node>
-	<node text="Хочу есть" new_background="conference">
+	<node  name = "begin_1" text="То мгновение... С которым ты просыпался, думая о быте, обыденных делах. Или ни о чём." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_2" text="То мгновение..." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_3" text="- Его больше нет." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_4" text="Остался только срок..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_5" text="Ровно неделя..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_6" text="Ты знаешь дату своей смерти." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_7" text="Неизличимая болезнь, - сказал врач. " new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_8" text="Неизличимая болезнь, которая ни доставляет боли, ни наносит вреда..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_9" text="Только остановка сердца..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_10" text="И конец..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_11" text="Все планы: о будущей карьере учёного..." new_background="hospital_nuar" hide_text="false">
+	</node>	
+	<node  name = "begin_12" text="О семье..." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_13" text="Всё время, которое я потратил на самосовершенствование, на учёбу..." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_14" text="Прошло даром..." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node  name = "begin_15" text="Даже нет близкого, с которым можно провести последние дни своей ограниченной судьбой жизни..." new_background="hospital_nuar" hide_text="false">
+	</node>
+	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
 		<answers>
-			<answer id="0" text="Пойду поем"></answer>
-			<answer id="1" text="Поголодаю"></answer>
-			<answer id="2" text="Враньё. Не хочу есть"></answer>
+			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
+			<answer id="1" text="Поголодаю" to_node="start_2"></answer>
 		</answers>
 	</node>
-	<node text="Есть небольшие переживания по поводу аниме">
+	<node name = "start_1" text="Привет, новичок">
+	</node>
+	<node name = "start_2" text="0Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_3" text="1Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_4" text="2Есть небольшие переживания по поводу аниме">
+	</node>
+	<node name = "start_5" text="3Есть небольшие переживания по поводу аниме">
 	</node>
 </dialogue>

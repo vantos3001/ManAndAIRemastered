@@ -21,7 +21,7 @@ namespace Game.Dialogue
         private DialogueSettings _dialogueSettings;
 
         public void Load(){
-            _asset = Resources.Load<TextAsset>(TEST_ASSET_PATH);
+            _asset = Resources.Load<TextAsset>(MAIN_TEXT_ASSET_PATH);
             _dialogueSettings = DialogueSettings.Load(_asset);
         }
 
@@ -123,6 +123,16 @@ namespace Game.Dialogue
             var isHide = _node.hideText == "true";
 
             return isHide;
+        }
+
+        public string GetMusicName()
+        {
+            return _node.music;
+        }
+
+        public string GetSoundName()
+        {
+            return _node.sound;
         }
     }
 }

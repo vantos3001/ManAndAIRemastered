@@ -2,18 +2,10 @@ using UnityEngine;
 
 namespace Game
 {
-    public class DataManager
+    public static class DataManager
     {
-        private static DataManager _manager;
         
-        public static DataManager Instance(){
-            if (_manager == null){
-                _manager = new DataManager();
-            }
-
-            return _manager;
-        }
-
+        
         public static Sprite GetSpriteBackground(string spriteName){
             var sprite = Resources.Load<Sprite>($"Images/{spriteName}");
 
@@ -22,6 +14,28 @@ namespace Game
             }
             
             return sprite;
+        }
+
+        public static AudioClip GetMusic(string musicName)
+        {
+            var music = Resources.Load<AudioClip>($"Audio/Music/{musicName}");
+
+            if (music == null){
+                Debug.LogError("music = " + musicName + " is not found");
+            }
+            
+            return music;
+        }
+        
+        public static AudioClip GetSound(string soundName)
+        {
+            var sound = Resources.Load<AudioClip>($"Audio/Sounds/{soundName}");
+
+            if (sound == null){
+                Debug.LogError("sound = " + soundName + " is not found");
+            }
+            
+            return sound;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Game
         public void Load(){
             DialogueManager.Instance().Load();
             UIManager.Instance().Load();
+            AudioManager.Load();
 
             LoadFinished?.Invoke();
         }
