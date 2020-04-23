@@ -29,6 +29,7 @@ namespace Game.Tools
         [XmlAttribute("sound")] public string sound;
         [XmlAttribute("action")] public string action;
         [XmlAttribute("input")] public string input;
+        [XmlAttribute("use_input")] public string use_input;
 
         [XmlArray("answers")] 
         [XmlArrayItem("answer")]

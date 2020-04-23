@@ -70,29 +70,50 @@
 	</node>
 	<node  name = "hospital_5" text="И делаешь два клика!">
 	</node>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
+	<node  name = "screen_0" text="^^Программа запускается^^" new_background="screen1">
+	</node>
+	<node name = "screen_1" text="Вы назовёте Дитя?">
 		<answers>
-			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
-			<answer id="1" text="Поголодаю" to_node="start_2"></answer>
+			<answer id="0" text="Дать имя" to_node="good_0"></answer>
+			<answer id="1" text="Выбрать по умолчанию" to_node="bad_0"></answer>
 		</answers>
 	</node>
-	<node name = "start_1" text="Привет, новичок">
+	<node  name = "good_0" text="Почему ^^дитя^^?">
 	</node>
-	<node name = "start_2" text="0Есть небольшие переживания по поводу аниме">
+	<node  name = "good_1" text="Вроде сценарист отвечал за тексты.">
 	</node>
-	<node name = "start_3" text="1Есть небольшие переживания по поводу аниме">
+	<node  name = "good_2" text="Может он виноват в неработаспособности программы?!">
 	</node>
-	<node name = "start_4" text="2Есть небольшие переживания по поводу аниме">
+	<node  name = "good_3" text="Введите имя для дитя:">
 	</node>
-	<node name = "start_5" text="3Есть небольшие переживания по поводу аниме">
+	<node  name = "good_4" text="" hide_text="true" input="true">
+	</node>
+	<node  name = "good_5" text="" new_background="screen2" hide_text="true" action="stop_audio" music="aliluya">
+	</node>
+	<node  name = "good_6" text="Твоё лицо скривилось от изумления." new_background="screen3">
+	</node>
+	<node  name = "good_7" text="Почему она работает?!">
+	</node>
+	<node  name = "good_8" text="В прошлый раз она сразу сломалась!">
+	</node>
+	<node  name = "good_9" text="Ты видишь сообщение на главном экране и кликаешь на него.">
+	</node>
+	<node  name = "good_10" text="" new_background="screen4" hide_text="true">
+	</node>
+	<node  name = "good_11" text="Проходит несколько секунд и до тебя доходит смысл этого сообщения.">
+	</node>
+	<node  name = "good_12" text="Ты вспоминаешь, что выбрал в прошлый раз вариант по-умолчанию.">
+	</node>
+	<node  name = "good_13" text="Также вспоминаешь, что никогда не называл своих коллег по имени...">
+	</node>
+	<node  name = "good_14" text="Только по должности...">
+	</node>
+	<node  name = "good_15" text="Теперь понятно, почему ты не помнишь их имён.">
+	</node>
+	<node  name = "good_16" text="Привет, родитель. Как хочешь, чтобы я тебя звал?" new_background="screen3">
+	</node>
+	<node  name = "good_17" text="" hide_text="true" input="true">
+	</node>
+	<node  name = "good_18" text="Здравствуй, " use_input="true">
 	</node>
 </dialogue>

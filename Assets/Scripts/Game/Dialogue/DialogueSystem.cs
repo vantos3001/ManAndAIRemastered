@@ -146,5 +146,12 @@ namespace Game.Dialogue
             
             return isInput;
         }
+        
+        public bool IsUseInput()
+        {
+            var isUseInput = _node.use_input == "true";
+            
+            return isUseInput;
+        }
     }
 }

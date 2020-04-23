@@ -49,5 +49,6 @@ public class UIInputField : MonoBehaviour
         IsHaveInput = false;
         gameObject.SetActive(false);
         EventManager.HandleOnPlayerNameInputEnded(_inputField.text);
+        _inputField.text = "";
     }
 }

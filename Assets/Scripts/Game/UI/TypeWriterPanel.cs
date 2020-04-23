@@ -29,7 +29,15 @@ namespace Game.UI
                 gameObject.SetActive(true);
                 
                 if (!IsEffectPlayed){
-                    SetText(dialogueNode.GetDialogueText());
+
+                    if (dialogueNode.IsUseInput())
+                    {
+                        SetText(dialogueNode.GetDialogueText() + DataManager.PlayerName);
+                    }
+                    else
+                    {
+                        SetText(dialogueNode.GetDialogueText());
+                    }
                 }
             }
         }
