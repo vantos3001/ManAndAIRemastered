@@ -27,6 +27,8 @@ namespace Game.Tools
         [XmlAttribute("hide_text")] public string hideText;
         [XmlAttribute("music")] public string music;
         [XmlAttribute("sound")] public string sound;
+        [XmlAttribute("action")] public string action;
+        [XmlAttribute("input")] public string input;
 
         [XmlArray("answers")] 
         [XmlArrayItem("answer")]

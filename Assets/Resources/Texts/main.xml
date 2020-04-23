@@ -4,35 +4,35 @@
 	</node>
 	<node  name = "begin_0" text="То мгновение... Когда ты либо шёл вперёд, либо стоял на месте иногда возвращаясь назад." new_background="hospital_nuar" hide_text="false">
 	</node>
-	<node  name = "begin_1" text="То мгновение... С которым ты просыпался, думая о быте, обыденных делах. Или ни о чём." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_1" text="То мгновение... С которым ты просыпался, думая о быте, обыденных делах. Или ни о чём." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_2" text="То мгновение..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_2" text="То мгновение..." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_3" text="- Его больше нет." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_3" text="Его больше нет." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_4" text="Остался только срок..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_4" text="Остался только срок..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_5" text="Ровно неделя..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_5" text="Ровно неделя..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_6" text="Ты знаешь дату своей смерти." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_6" text="Ты знаешь дату своей смерти." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_7" text="Неизличимая болезнь, - сказал врач. " new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_7" text="Неизличимая болезнь, - сказал врач. " new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_8" text="Неизличимая болезнь, которая ни доставляет боли, ни наносит вреда..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_8" text="Неизличимая болезнь, которая ни доставляет боли, ни наносит вреда..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_9" text="Только остановка сердца..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_9" text="Только остановка сердца..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_10" text="И конец..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_10" text="И конец..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_11" text="Все планы: о будущей карьере учёного..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_11" text="Все планы: о будущей карьере учёного..." new_background="hospital_nuar">
 	</node>	
-	<node  name = "begin_12" text="О семье..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_12" text="О семье..." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_13" text="Всё время, которое я потратил на самосовершенствование, на учёбу..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_13" text="Всё время, которое я потратил на самосовершенствование, на учёбу..." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_14" text="Прошло даром..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_14" text="Прошло даром..." new_background="hospital_nuar">
 	</node>
-	<node  name = "begin_15" text="Даже нет близкого, с которым можно провести последние дни своей ограниченной судьбой жизни..." new_background="hospital_nuar" hide_text="false">
+	<node  name = "begin_15" text="Даже нет близкого, с которым можно провести последние дни своей ограниченной судьбой жизни..." new_background="hospital_nuar">
 	</node>
 	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
 		<answers>

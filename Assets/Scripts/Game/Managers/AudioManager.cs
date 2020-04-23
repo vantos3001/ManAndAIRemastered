@@ -26,6 +26,11 @@ public static class AudioManager
         {
             PlaySound(node.GetSoundName());
         }
+
+        if (node.GetAction() == "stop_audio")
+        {
+            ClearAll();
+        }
     }
 
     private static void PlayMusic(string musicName)

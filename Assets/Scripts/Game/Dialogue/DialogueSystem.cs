@@ -134,5 +134,17 @@ namespace Game.Dialogue
         {
             return _node.sound;
         }
+
+        public string GetAction()
+        {
+            return _node.action;
+        }
+
+        public bool IsInput()
+        {
+            var isInput = _node.input == "true";
+            
+            return isInput;
+        }
     }
 }
