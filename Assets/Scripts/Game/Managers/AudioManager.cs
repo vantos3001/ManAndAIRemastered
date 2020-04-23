@@ -17,6 +17,11 @@ public static class AudioManager
 
     private static void OnDialoguePhraseChanged(DialogueNode node)
     {
+        if (node.GetAction() == "stop_audio")
+        {
+            ClearAll();
+        }
+        
         if (!string.IsNullOrEmpty(node.GetMusicName()))
         {
             PlayMusic(node.GetMusicName());
@@ -25,11 +30,6 @@ public static class AudioManager
         if (!string.IsNullOrEmpty(node.GetSoundName()))
         {
             PlaySound(node.GetSoundName());
-        }
-
-        if (node.GetAction() == "stop_audio")
-        {
-            ClearAll();
         }
     }
 

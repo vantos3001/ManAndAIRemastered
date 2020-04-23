@@ -4,36 +4,81 @@
 	</node>
 	<node  name = "begin_0" text="То мгновение... Когда ты либо шёл вперёд, либо стоял на месте иногда возвращаясь назад." new_background="hospital_nuar" hide_text="false">
 	</node>
-	<node  name = "begin_1" text="То мгновение... С которым ты просыпался, думая о быте, обыденных делах. Или ни о чём." new_background="hospital_nuar">
+	<node  name = "begin_1" text="То мгновение... С которым ты просыпался, думая о быте, обыденных делах. Или ни о чём.">
 	</node>
-	<node  name = "begin_2" text="То мгновение..." new_background="hospital_nuar">
+	<node  name = "begin_2" text="То мгновение...">
 	</node>
-	<node  name = "begin_3" text="Его больше нет." new_background="hospital_nuar">
+	<node  name = "begin_3" text="Его больше нет.">
 	</node>
-	<node  name = "begin_4" text="Остался только срок..." new_background="hospital_nuar">
+	<node  name = "begin_4" text="Остался только срок...">
 	</node>	
-	<node  name = "begin_5" text="Ровно неделя..." new_background="hospital_nuar">
+	<node  name = "begin_5" text="Ровно неделя...">
 	</node>	
-	<node  name = "begin_6" text="Ты знаешь дату своей смерти." new_background="hospital_nuar">
+	<node  name = "begin_6" text="Ты знаешь дату своей смерти.">
 	</node>	
-	<node  name = "begin_7" text="Неизличимая болезнь, - сказал врач. " new_background="hospital_nuar">
+	<node  name = "begin_7" text="Неизличимая болезнь, - сказал врач. ">
 	</node>	
-	<node  name = "begin_8" text="Неизличимая болезнь, которая ни доставляет боли, ни наносит вреда..." new_background="hospital_nuar">
+	<node  name = "begin_8" text="Неизличимая болезнь, которая ни доставляет боли, ни наносит вреда...">
 	</node>	
-	<node  name = "begin_9" text="Только остановка сердца..." new_background="hospital_nuar">
+	<node  name = "begin_9" text="Только остановка сердца...">
 	</node>	
-	<node  name = "begin_10" text="И конец..." new_background="hospital_nuar">
+	<node  name = "begin_10" text="И конец...">
 	</node>	
-	<node  name = "begin_11" text="Все планы: о будущей карьере учёного..." new_background="hospital_nuar">
+	<node  name = "begin_11" text="Все планы: о будущей карьере учёного...">
 	</node>	
-	<node  name = "begin_12" text="О семье..." new_background="hospital_nuar">
+	<node  name = "begin_12" text="О семье...">
 	</node>
-	<node  name = "begin_13" text="Всё время, которое я потратил на самосовершенствование, на учёбу..." new_background="hospital_nuar">
+	<node  name = "begin_13" text="Всё время, которое я потратил на самосовершенствование, на учёбу...">
 	</node>
-	<node  name = "begin_14" text="Прошло даром..." new_background="hospital_nuar">
+	<node  name = "begin_14" text="Прошло даром...">
 	</node>
-	<node  name = "begin_15" text="Даже нет близкого, с которым можно провести последние дни своей ограниченной судьбой жизни..." new_background="hospital_nuar">
+	<node  name = "begin_15" text="Даже нет близкого, с которым можно провести последние дни своей ограниченной судьбой жизни...">
 	</node>
+	<node  name = "begin_16" text="^^Звук играющих детей на площадке^^" action="stop_audio" sound="child_noise">
+	</node>
+	<node  name = "begin_17" text="А у меня ведь даже нет детей.">
+	</node>
+	<node  name = "begin_18" text="И вдруг на тебя нахлынули воспоминания." music="conference_music">
+	</node>
+	<node  name = "conference_0" text="У тебя была разработка полугодовой давности об искусственном интеллекте." new_background="conference_nuar">
+	</node>
+	<node  name = "conference_1" text="Вы с командой сделали программу самообучения искусственного интеллекта.">
+	</node>
+	<node  name = "conference_2" text="Но она подвела.">
+	</node>
+	<node  name = "conference_3" text="Крашнулась в самый неподходящий момент, во время международной  выставки.">
+	</node>
+	<node  name = "conference_4" text="Хотя во время тестов показывала отличные результаты.">
+	</node>
+	<node  name = "conference_5" text="Грусть снова начала к тебе возвращаться после воспоминаний о былой неудаче.">
+	</node>
+	<node  name = "conference_6" text="После провала ты обвинил каждого из своей команды в этой ошибке. ">
+	</node>
+	<node  name = "conference_7" text="Хм...">
+	</node>
+	<node  name = "conference_8" text="Ты даже не помнишь их имён.">
+	</node>
+	<node  name = "hospital_0" text="^^Снова детский смех.^^" new_background="hospital" action="stop_audio" sound="child_noise">
+	</node>
+	<node  name = "hospital_1" text="Ты чувствуешь странное желание...">
+	</node>
+	<node  name = "hospital_2" text="Решаешься снова попробовать." action="stop_audio" music="after_child_noise">
+	</node>
+	<node  name = "hospital_3" text="Недолго думая, ты включаешь ноутбук.">
+	</node>
+	<node  name = "hospital_4" text="Находишь программу в папке: Лучше забыть.">
+	</node>
+	<node  name = "hospital_5" text="И делаешь два клика!">
+	</node>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<node name = "start_0" text="Хочу есть, очень оооочень хочу" new_background="conference">
 		<answers>
 			<answer id="0" text="Пойду поем" to_node="start_1"></answer>
