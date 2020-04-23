@@ -18,6 +18,21 @@ namespace Game.UI
         {
             _typeWriterEffect.DialoguePhraseEnded += OnDialoguePhraseEnded;
         }
+
+        public void UpdateView(DialogueNode dialogueNode)
+        {
+            var isHideTextPanel = dialogueNode.IsHideText();
+            if (isHideTextPanel){
+                gameObject.SetActive(false);
+            }
+            else{
+                gameObject.SetActive(true);
+                
+                if (!IsEffectPlayed){
+                    SetText(dialogueNode.GetDialogueText());
+                }
+            }
+        }
         
         public override void SetText(string text)
         {
@@ -26,8 +41,6 @@ namespace Game.UI
             _typeWriterEffect.SetText(text , true);
         }
         
-        
-
         private void Clear()
         {
             _isWaitForClick = false;

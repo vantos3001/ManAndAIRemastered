@@ -13,7 +13,6 @@ namespace Game.UI
 
         public event Action<int> AnswerButtonClicked;
         
-        // Start is called before the first frame update
         void Awake(){
             
             for (int i = 0; i < _answerButtons.Count; i++){
@@ -22,8 +21,10 @@ namespace Game.UI
             }
         }
 
-        public void UpdateButtons(DialogueNode dialogueNode){
+        public void UpdateView(DialogueNode dialogueNode){
             if (dialogueNode.IsHasAnswers()){
+                gameObject.SetActive(true);
+                
                 var answerCount = dialogueNode.AnswerCount();
                 for (int i = 0; i < answerCount; i++){
                     var currentAnswerButton = _answerButtons[i];
@@ -31,11 +32,18 @@ namespace Game.UI
                     currentAnswerButton.SetText(dialogueNode.GetAnswerTextById(i));
                 }
             }
-            else{
+            else
+            {
+                gameObject.SetActive(false);
+                
                 foreach (var answerButton in _answerButtons){
                     answerButton.SetActive(false);
                 }
             }
+        }
+
+        public bool IsOpened(){
+            return gameObject.activeSelf;
         }
 
         private void NotifyAnswerButtonClicked(int answerId){

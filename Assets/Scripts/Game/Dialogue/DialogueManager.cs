@@ -1,3 +1,4 @@
+using Game.UI;
 using UnityEngine;
 
 namespace Game.Dialogue
@@ -10,18 +11,19 @@ namespace Game.Dialogue
         
         private DialogueManager(){
             _dialogueSystem = new DialogueSystem();
+            
+            EventManager.OnAnswerButtonClicked += OnAnswerButtonClicked;
         }
         
-        public DialogueNode StartDialogue(){
+        public void StartDialogue(){
             _dialogueSystem.StartDialogue();
 
-            NotifyDialoguePhraseChanged();
+            UIManager.Instance().UpdateDialogueWindow(_dialogueSystem.CurrentDialogueNode);
             
-            var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
-            return currentDialogueNode;
+            NotifyDialoguePhraseChanged();
         }
         
-        public DialogueNode NextDialoguePhraseByAnswerId(int answerId){
+        private DialogueNode NextDialoguePhraseByAnswerId(int answerId){
             _dialogueSystem.NextByAnswerId(answerId);
             
             var currentDialogueNode = _dialogueSystem.CurrentDialogueNode;
@@ -44,6 +46,14 @@ namespace Game.Dialogue
         private void EndDialogue()
         {
             Debug.Log("End dialogue");
+        }
+        
+        private void ChangePhraseByAnswer(int answerId){
+            var dialogueNode = Instance().NextDialoguePhraseByAnswerId(answerId);
+            UIManager.Instance().UpdateDialogueWindow(dialogueNode);
+        }
+        private void OnAnswerButtonClicked(int answerId){
+            ChangePhraseByAnswer(answerId);
         }
 
         private void NotifyDialoguePhraseChanged(){
