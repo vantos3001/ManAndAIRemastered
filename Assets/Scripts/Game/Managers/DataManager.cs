@@ -4,7 +4,7 @@ namespace Game
 {
     public static class DataManager
     {
-        
+        public static string PlayerName { get; set; }
         
         public static Sprite GetSpriteBackground(string spriteName){
             var sprite = Resources.Load<Sprite>($"Images/{spriteName}");

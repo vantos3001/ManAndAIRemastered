@@ -13,6 +13,7 @@ namespace Game.Dialogue
             _dialogueSystem = new DialogueSystem();
             
             EventManager.OnAnswerButtonClicked += OnAnswerButtonClicked;
+            EventManager.OnPlayerNameInputEnded += OnPlayerNameInputEnded;
         }
         
         public void StartDialogue(){
@@ -54,6 +55,12 @@ namespace Game.Dialogue
         }
         private void OnAnswerButtonClicked(int answerId){
             ChangePhraseByAnswer(answerId);
+        }
+
+        private void OnPlayerNameInputEnded(string playerName)
+        {
+            DataManager.PlayerName = playerName;
+            NextDialoguePhrase();
         }
 
         private void NotifyDialoguePhraseChanged(){

@@ -7,7 +7,9 @@ public static class EventManager
 
     public static Action TypeWriterEffectEnded;
     
-    public static event Action<int> OnAnswerButtonClicked; 
+    public static event Action<int> OnAnswerButtonClicked;
+
+    public static Action<string> OnPlayerNameInputEnded;
 
 
     public static void HandleDialoguePhraseChanged(DialogueNode node)
@@ -23,5 +25,10 @@ public static class EventManager
     public static void HandleOnAnswerButtonClicked(int answerId)
     {
         OnAnswerButtonClicked?.Invoke(answerId);
+    }
+    
+    public static void HandleOnPlayerNameInputEnded(string playerName)
+    {
+        OnPlayerNameInputEnded?.Invoke(playerName);
     }
 }

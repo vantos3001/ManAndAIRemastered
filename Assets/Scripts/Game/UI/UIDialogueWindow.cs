@@ -6,6 +6,7 @@ public class UIDialogueWindow : MonoBehaviour
 {
     public TypeWriterPanel TextPanel;
     public AnswerPanel AnswerPanel;
+    public UIInputField UiInputField;
 
     public void SetContent(DialogueNode node)
     {
@@ -33,6 +34,7 @@ public class UIDialogueWindow : MonoBehaviour
     {
         TextPanel.UpdateView(node);
         AnswerPanel.UpdateView(node);
+        UiInputField.UpdateView(node);
 
         var newBackground = node.GetNewBackground();
         if (!string.IsNullOrEmpty(newBackground)){
@@ -42,7 +44,7 @@ public class UIDialogueWindow : MonoBehaviour
 
     private void HandleMouseLeftClick()
     {
-        if(!AnswerPanel.IsHasAnswers)
+        if(!AnswerPanel.IsHasAnswers && !UiInputField.IsHaveInput)
             if (TextPanel.IsWaitForClick || IsHideTextPanel())
             {
                 ChangePhrase();
