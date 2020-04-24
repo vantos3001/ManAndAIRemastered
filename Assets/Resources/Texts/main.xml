@@ -122,10 +122,30 @@
 	</node>
 	<node  name = "good_21" text="Твой малыш...">
 	</node>
-	<node  name = "good_22" text="У тебя внутри проявляется необъяснимое внутреннее чувство..">
+	<node  name = "good_22" text="У тебя внутри проявляется необъяснимое внутреннее чувство...">
 	</node>
 	<node  name = "good_23" text="Ты понимаешь, что этот искусственный интеллект может стать..">
 	</node>
 	<node  name = "good_24" text="" new_background="goodEnd" hide_text="true" end="true">
+	</node>
+	<node  name = "bad_0" text="Эх..." new_background="screenError">
+	</node>
+	<node  name = "bad_1" text="Всё-таки надежда была.">
+	</node>
+	<node  name = "bad_2" text="" hide_text="true"  action="stop_audio" music="kardiogramma" new_background="7days_after">
+	</node>
+	<node  name = "bad_3" text="Вот и всё." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_4" text="Последние минуты моей жизни." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_5" text="Даже нечего вспомнить..." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_6" text="Моя жизнь бессмысленна." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_7" text="Ни добра." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_8" text="Ни зла." new_background="hospital_nuar">
+	</node>
+	<node  name = "bad_9" text="Я ничего не привнес в этом мир смешанных чувств." new_background="hospital_nuar" end="true">
 	</node>
 </dialogue>
