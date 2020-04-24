@@ -10,7 +10,7 @@ public class TypeWriterEffect : MonoBehaviour
     private string _partialText;
     private float _cumulativeDeltaTime;
 
-    private TextMeshProUGUI _label;
+   [SerializeField] private TextMeshProUGUI _label;
 
     private bool _isPlayed;
     public bool IsPlayed => _isPlayed;
@@ -20,16 +20,6 @@ public class TypeWriterEffect : MonoBehaviour
     private bool _isFirstFramePassed;
 
     public Action DialoguePhraseEnded;
-
-    private void Awake()
-    {
-        _label = GetComponent<TextMeshProUGUI>();
-    }
-
-    private void Start()
-    {
-        Clear();
-    }
 
     private void Update()
     {
@@ -71,6 +61,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     private void Clear()
     {
+        _label.text = "";
         _partialText = "";
         _cumulativeDeltaTime = 0;
         _isFirstFramePassed = false;

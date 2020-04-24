@@ -26,8 +26,6 @@ namespace Game.UI
                 gameObject.SetActive(false);
             }
             else{
-                gameObject.SetActive(true);
-                
                 if (!IsEffectPlayed){
 
                     if (dialogueNode.IsUseInput())
@@ -39,6 +37,7 @@ namespace Game.UI
                         SetText(dialogueNode.GetDialogueText());
                     }
                 }
+                gameObject.SetActive(true);
             }
         }
         
