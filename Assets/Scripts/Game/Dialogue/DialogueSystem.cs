@@ -34,6 +34,11 @@ namespace Game.Dialogue
         }
 
         public void Next(){
+            if (_isEnded)
+            {
+                return;
+            }
+            
             _currentPhrase++;
             var nodeLength = DialogueTextLength();
             
@@ -45,6 +50,12 @@ namespace Game.Dialogue
 
             var currentNode = _dialogueSettings.Nodes[_currentPhrase];
             _currentDialogueNode = new DialogueNode(currentNode);
+
+            if (_currentDialogueNode.IsEnd())
+            {
+                _isEnded = true;
+                Debug.LogWarning("Dialogue text ended");
+            }
         }
 
         public void NextByAnswerId(int answerId){
@@ -152,6 +163,13 @@ namespace Game.Dialogue
             var isUseInput = _node.use_input == "true";
             
             return isUseInput;
+        }
+        
+        public bool IsEnd()
+        {
+            var isEnd = _node.end == "true";
+            
+            return isEnd;
         }
     }
 }

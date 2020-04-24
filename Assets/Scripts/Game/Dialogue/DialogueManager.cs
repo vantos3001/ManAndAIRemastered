@@ -1,5 +1,6 @@
 using Game.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Dialogue
 {
@@ -7,6 +8,8 @@ namespace Game.Dialogue
     {
         private static DialogueManager _manager;
         private DialogueSystem _dialogueSystem;
+
+        private bool _isEnd;
         
         
         private DialogueManager(){
@@ -34,19 +37,22 @@ namespace Game.Dialogue
         public void NextDialoguePhrase(){
             _dialogueSystem.Next();
 
+            if (!_isEnd)
+            {
+                NotifyDialoguePhraseChanged();
+            }
+
             if (_dialogueSystem.IsEnded)
             {
                 EndDialogue();
-            }
-            else
-            {
-                NotifyDialoguePhraseChanged();
             }
         }
         
         private void EndDialogue()
         {
+            _isEnd = true;
             Debug.Log("End dialogue");
+            UIManager.Instance().ShowCloseButton();
         }
         
         private void ChangePhraseByAnswer(int answerId){

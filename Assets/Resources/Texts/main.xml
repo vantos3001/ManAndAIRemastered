@@ -126,6 +126,6 @@
 	</node>
 	<node  name = "good_23" text="Ты понимаешь, что этот искусственный интеллект может стать..">
 	</node>
-	<node  name = "good_24" text="" new_background="goodEnd" hide_text="true">
+	<node  name = "good_24" text="" new_background="goodEnd" hide_text="true" end="true">
 	</node>
 </dialogue>

@@ -17,6 +17,11 @@ namespace Game.UI
         {
             _canvas.DialogueWindow.SetContent(dialogueNode);
         }
+        
+        public void ShowCloseButton()
+        {
+            _canvas.ShowCloseButton();
+        }
 
         public void SetBackground(string backgroundName){
             var background = DataManager.GetSpriteBackground(backgroundName);

@@ -30,6 +30,7 @@ namespace Game.Tools
         [XmlAttribute("action")] public string action;
         [XmlAttribute("input")] public string input;
         [XmlAttribute("use_input")] public string use_input;
+        [XmlAttribute("end")] public string end;
 
         [XmlArray("answers")] 
         [XmlArrayItem("answer")]
