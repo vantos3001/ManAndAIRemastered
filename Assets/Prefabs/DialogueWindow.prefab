@@ -176,6 +176,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3817038308085412610, guid: 787fb790fc2ff364c95c3559707fab7c,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8216726737371215058, guid: 787fb790fc2ff364c95c3559707fab7c,
         type: 3}
       propertyPath: m_Material
@@ -189,7 +194,12 @@ PrefabInstance:
     - target: {fileID: 8216726737371215058, guid: 787fb790fc2ff364c95c3559707fab7c,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623922746979986292, guid: 787fb790fc2ff364c95c3559707fab7c,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8689917682936150265, guid: 787fb790fc2ff364c95c3559707fab7c,
         type: 3}
@@ -469,11 +479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1817550915425712694, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1817550915425712695, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -578,16 +583,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015093092144876282, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015093092144876282, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c3c7e52ffbcd44eb8bf7f6d7ddd598, type: 3}
